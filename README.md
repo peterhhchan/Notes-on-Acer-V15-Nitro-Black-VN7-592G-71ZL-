@@ -1,0 +1,1 @@
+# Notes-on-Acer-V15-Nitro-Black-VN7-592G-71ZL-
