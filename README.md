@@ -54,4 +54,4 @@ This process was even more difficult than upgrading the parts in the machine, an
 The SSD drive failed as I was working, which I replaced with a INTEL® SSD 600P Series 512GB M.2 **($270 CAD, ~$200 USD)**
 The NVMe support on the new SSD was noticeably faster.
 
-This time, I decided to dual-boot plain old Ubuntu 16 alongside Windows 10.  
+This time, I decided to dual-boot plain old Ubuntu 16 alongside Windows 10.  The installation this time was much easier.  There were no problems with the graphics drivers, and I was able to use the Ubuntu installation option of installing alongside Windows successfully.  I did however had to create a boot entry in the UEFI for Ubuntu.  
