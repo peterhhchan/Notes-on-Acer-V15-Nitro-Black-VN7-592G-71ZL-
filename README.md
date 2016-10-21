@@ -30,22 +30,28 @@ However, as the RAM modules were located underneath the motherboard, I had to de
 
 ##  Dual booting Windows 10 and Linux from the same drive ##
 This process was even more difficult than upgrading the parts in the machine, and the motivation for writing this document.  
-1. Install Windows 10
-I created a Windows 10 bootable USB flash drive and installed Windows 10 normally on the SSD.  
-A windows product key was not required. If you are wondering why, read this article on [digital entitlements] (http://www.pcworld.com/article/2970075/windows/why-you-cant-find-your-product-key-after-upgrading-to-windows-10.html).  
-There are 3 USB ports on this machine, only the USB3 port furthest away from the screen worked for booting.
 
-2. Install Xubuntu
-Disable fast startup in Windows 10.
-I left UEFI enabled, but secure boot had to be disabled.  In order to modify the secure boot setting, you first need to set a password for the BIOS.
-Initially, when I tried booting Xubuntu from the flash drive, the installation would continuously crash or hang.  I fixed this problem by adding “nomodeset” to the boot arguments.  (I modified the lines directly in grub on my flash drive).  
-During the installation process, I manually created my own partitions instead of selecting the “install Xubuntu alongside Windows” option.
-After installation, instead of rebooting immediately, I installed efibootmgr and changed the boot order such that ubuntu booted first.  (There may be more than one copy of xubuntu listed, I placed them all above Windows Boot Manager).  I used this [post](http://forum.notebookreview.com/threads/linux-windows-dual-boot-setup-guide-gpt-uefi-edition.729142/) as a guide.
-The machine upon rebooting will still boot into Windows.  The final change I had to do was install [easyuefi](http://www.easyuefi.com/index-us.html), and then added a new Windows Boot Manager entry that pointed to grubx64.efi instead of Microsoft’s Boot\bootmgfw.efi.  
+1. **Install Windows 10**
 
-3. Final Steps
-The firmware for the wireless card was not included in the distro I downloaded.  Getting the 4.3 kernel solved my problem.  However, like other users online, I have experienced occasionally problems with my wifi connection.  I would occasionally lose my wifi connection, and had to disconnect and reconnect.  
+  * I created a Windows 10 bootable USB flash drive and installed Windows 10 normally on the SSD.  
+  * A windows product key was not required. If you are wondering why, read this article on [digital entitlements] (http://www.pcworld.com/article/2970075/windows/why-you-cant-find-your-product-key-after-upgrading-to-windows-10.html).  
+  * There are 3 USB ports on this machine, only the USB3 port furthest away from the screen worked for booting.
 
-Update August, 2016.
+2. **Install Xubuntu 15.04**
+
+  * Disable fast startup in Windows 10.
+  * I left UEFI enabled, but secure boot had to be disabled.  In order to modify the secure boot setting, you first need to set a password for the BIOS.
+  * Initially, when I tried booting Xubuntu from the flash drive, the installation would continuously crash or hang.  I fixed this problem by adding “nomodeset” to the boot arguments.  (I modified the lines directly in grub on my flash drive).  
+  * During the installation process, I manually created my own partitions instead of selecting the “install Xubuntu alongside Windows” option.
+  * After installation, instead of rebooting immediately, I installed efibootmgr and changed the boot order such that ubuntu booted first.  (There may be more than one copy of xubuntu listed, I placed them all above Windows Boot Manager).  I used this [post](http://forum.notebookreview.com/threads/linux-windows-dual-boot-setup-guide-gpt-uefi-edition.729142/) as a guide.
+  * The machine upon rebooting still booted into Windows.  The final change I had to do was install [easyuefi](http://www.easyuefi.com/index-us.html), and then added a new Windows Boot Manager entry that pointed to grubx64.efi instead of Microsoft’s Boot\bootmgfw.efi.  
+
+3. **Final Steps**
+
+  * The firmware for the wireless card was not included in the distro I downloaded.  Getting the 4.3 kernel solved my problem.  However, like other users online, I have experienced occasionally problems with my wifi connection.  I would occasionally lose my wifi connection, and had to disconnect and reconnect.  
+
+##Update August, 2016.##
 The SSD drive failed as I was working, which I replaced with a INTEL® SSD 600P Series 512GB M.2 **($270 CAD, ~$200 USD)**
 The NVMe support on the new SSD was noticeably faster.
+
+This time, I decided to dual-boot plain old Ubuntu 16 alongside Windows 10.  
